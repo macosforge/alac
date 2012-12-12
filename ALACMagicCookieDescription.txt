@@ -58,10 +58,10 @@ When vended by the encoder (and received by the decoder) the struct values will 
 						 	value should be set to 40
 
     field      	mb 			uint8_t 	currently unused tuning parameter. 
-						 	value should be set to 14
+						 	value should be set to 10
 
     field      	kb			uint8_t 	currently unused tuning parameter. 
-						 	value should be set to 10
+						 	value should be set to 14
 
     field      	numChannels 		uint8_t 	describes the channel count (1 = mono, 2 = stereo, etc...)
 							when channel layout info is not provided in the 'magic cookie', a channel count > 2
