@@ -1,0 +1,41 @@
+diff --git a/codec/ag_dec.c b/codec/ag_dec.c
+index 2214c94..8576302 100644
+--- a/codec/ag_dec.c
++++ b/codec/ag_dec.c
+@@ -269,7 +269,7 @@ static inline int32_t dyn_get_32bit( uint8_t * in, uint32_t * bitPos, int32_t m,
+        return result;
+ }
+ 
+-int32_t dyn_decomp( AGParamRecPtr params, BitBuffer * bitstream, int32_t * pc, int32_t numSamples, int32_t maxSize, uint32_t * outNumBits )
++int32_t dyn_decomp( AGParamRecPtr params, BitBuffer * bitstream, int32_t * pc, uint32_t numSamples, int32_t maxSize, uint32_t * outNumBits )
+ {
+     uint8_t            *in;
+     int32_t                    *outPtr = pc;
+diff --git a/codec/ag_enc.c b/codec/ag_enc.c
+index 2dfe999..0d749f0 100644
+--- a/codec/ag_enc.c
++++ b/codec/ag_enc.c
+@@ -247,7 +247,7 @@ static inline void ALWAYS_INLINE dyn_jam_noDeref_large(unsigned char *out, uint3
+ }
+ 
+ 
+-int32_t dyn_comp( AGParamRecPtr params, int32_t * pc, BitBuffer * bitstream, int32_t numSamples, int32_t bitSize, uint32_t * outNumBits )
++int32_t dyn_comp( AGParamRecPtr params, int32_t * pc, BitBuffer * bitstream, uint32_t numSamples, int32_t bitSize, uint32_t * outNumBits )
+ {
+     unsigned char *            out;
+     uint32_t           bitPos, startPos;
+diff --git a/codec/aglib.h b/codec/aglib.h
+index dc4ff8f..b28f0e8 100644
+--- a/codec/aglib.h
++++ b/codec/aglib.h
+@@ -70,8 +70,8 @@ struct BitBuffer;
+ void   set_standard_ag_params(AGParamRecPtr params, uint32_t fullwidth, uint32_t sectorwidth);
+ void   set_ag_params(AGParamRecPtr params, uint32_t m, uint32_t p, uint32_t k, uint32_t f, uint32_t s, uint32_t maxrun);
+ 
+-int32_t                dyn_comp(AGParamRecPtr params, int32_t * pc, struct BitBuffer * bitstream, int32_t numSamples, int32_t bitSize, uint32_t * outNumBits);
+-int32_t                dyn_decomp(AGParamRecPtr params, struct BitBuffer * bitstream, int32_t * pc, int32_t numSamples, int32_t maxSize, uint32_t * outNumBits);
++int32_t                dyn_comp(AGParamRecPtr params, int32_t * pc, struct BitBuffer * bitstream, uint32_t numSamples, int32_t bitSize, uint32_t * outNumBits);
++int32_t                dyn_decomp(AGParamRecPtr params, struct BitBuffer * bitstream, int32_t * pc, uint32_t numSamples, int32_t maxSize, uint32_t * outNumBits);
+ 
+ 
+ #ifdef __cplusplus

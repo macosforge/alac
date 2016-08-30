@@ -1,0 +1,13 @@
+Index: convert-utility/makefile
+===================================================================
+--- convert-utility/makefile	(revision 3)
++++ convert-utility/makefile	(working copy)
+@@ -30,7 +30,7 @@
+ 
+ alacconvert:	$(OBJS)
+ 	(cd $(CODECDIR); $(MAKE))
+-	$(CC) $(LFLAGS) $(OBJS) -o alacconvert
++	$(CC) $(OBJS) -o alacconvert $(LFLAGS)
+ 
+ main.o : main.cpp
+ 	$(CC) -I $(INCLUDES) $(CFLAGS) main.cpp
