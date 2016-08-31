@@ -5,6 +5,11 @@ defaults:
       path: ""
     values:
       layout: "default"
+exclude:
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+  - README.md
 permalink: pretty
 title: "Apple Lossless Audio Codec"
 url: "https://macosforge.github.io"
