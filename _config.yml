@@ -1,3 +1,4 @@
+baseurl: "/alac"
 defaults:
   -
     scope:
@@ -5,3 +6,5 @@ defaults:
     values:
       layout: "default"
 permalink: pretty
+title: "Apple Lossless Audio Codec"
+url: "https://macosforge.github.io"
