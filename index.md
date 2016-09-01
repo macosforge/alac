@@ -26,7 +26,7 @@ To demonstrate how to encode/decode ALAC to/from audio files, build the alacconv
 
 The macOS and Windows projects compile the decoder/encoder directly into the alacconvert tool. The UNIX makefile builds libalac.a first and links against the static library for compiling the tool.
 
-As mentioned in the ReadMe, the Windows project requires <stdint.h>, and this is only installed by default with Visual Studio 2010. The code is in the public domain, however, and it should be fairly easy to locate a copy.
+As mentioned in the ReadMe, the Windows project requires &lt;stdint.h&gt;, and this is only installed by default with Visual Studio 2010. The code is in the public domain, however, and it should be fairly easy to locate a copy.
 
 ## Using alacconvert
 
