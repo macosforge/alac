@@ -2,6 +2,7 @@
 title: Apple Lossless Audio Codec
 ---
 
+{:.lead}
 The Apple Lossless Audio Codec (ALAC) is an audio codec developed by Apple and supported on iPhone, iPad, most iPods, Mac and iTunes. ALAC is a data compression method which reduces the size of audio files with no loss of information. A decoded ALAC stream is bit-for-bit identical to the original uncompressed audio file.
 
 The Apple Lossless Audio Codec project contains the sources for the ALAC encoder and decoder. Also included is an example command line utility, called alacconvert, to read and write audio data to/from Core Audio Format (CAF) and WAVE files. A description of a 'magic cookie' for use with files based on the ISO base media file format (e.g. MP4 and M4A) is included as well.
