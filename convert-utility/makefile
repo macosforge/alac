@@ -26,7 +26,18 @@ $(SRCDIR)/CAFFileALAC.cpp \
 
 OBJS = \
 main.o \
-CAFFileALAC.o 
+CAFFileALAC.o \
+$(CODECDIR)/ag_dec.o \
+$(CODECDIR)/ag_enc.o \
+$(CODECDIR)/ALACBitUtilities.o \
+$(CODECDIR)/ALACDecoder.o \
+$(CODECDIR)/ALACEncoder.o \
+$(CODECDIR)/dp_dec.o \
+$(CODECDIR)/dp_enc.o \
+$(CODECDIR)/EndianPortable.o \
+$(CODECDIR)/matrix_dec.o \
+$(CODECDIR)/matrix_enc.o
+
 
 alacconvert:	$(OBJS)
 	(cd $(CODECDIR); $(MAKE))
@@ -40,8 +51,3 @@ CAFFileALAC.o : CAFFileALAC.cpp
 
 clean:
 	-rm $(OBJS) alacconvert
-	
-
-
-
-
