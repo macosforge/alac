@@ -200,17 +200,17 @@ int32_t GetInputFormat(FILE * inputFile, AudioFormatDescription * theInputFormat
 
     fread(theReadBuffer, 1, 4, inputFile);
     
-    if (theReadBuffer[0] == 'c' && theReadBuffer[1] == 'a' && theReadBuffer[2] == 'f'  & theReadBuffer[3] == 'f')
+    if (theReadBuffer[0] == 'c' && theReadBuffer[1] == 'a' && theReadBuffer[2] == 'f'  && theReadBuffer[3] == 'f')
     {
         // It's a caff file!
         *theFileType = 'caff';
         // We support pcm data for encode and alac data for decode
         done = GetCAFFdescFormat(inputFile, theInputFormat);
     }
-    else if (theReadBuffer[0] == 'R' && theReadBuffer[1] == 'I' && theReadBuffer[2] == 'F'  & theReadBuffer[3] == 'F')
+    else if (theReadBuffer[0] == 'R' && theReadBuffer[1] == 'I' && theReadBuffer[2] == 'F'  && theReadBuffer[3] == 'F')
     {
         fread(theReadBuffer, 1, 8, inputFile);
-        if (theReadBuffer[4] == 'W' && theReadBuffer[5] == 'A' && theReadBuffer[6] == 'V'  & theReadBuffer[7] == 'E')
+        if (theReadBuffer[4] == 'W' && theReadBuffer[5] == 'A' && theReadBuffer[6] == 'V'  && theReadBuffer[7] == 'E')
         {
             // It's a WAVE file!
             *theFileType = 'WAVE';
